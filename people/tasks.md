@@ -30,4 +30,4 @@ Create class Teacher:
 
 - inherits from Person
 - constructor extends parent's class constructor by adding instance var & param (`@specialization`/`specialization`)
-- overrides parent's methos `can_use_services?` and always returns `true`
+- overrides parent's methods `can_use_services?` and always returns `true`
