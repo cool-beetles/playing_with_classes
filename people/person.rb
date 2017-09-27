@@ -1,7 +1,6 @@
 require "./people/corrector.rb"
 
-attr_reader :name :age :parent_permission :id
-attr_writer :name :age :parent_permission
+attr_accessor :name :age :parent_permission :id
 
 class Person
   def initialize(name = "Unknown", age, parent_permission = true)

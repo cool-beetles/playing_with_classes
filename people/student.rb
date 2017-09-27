@@ -1,7 +1,6 @@
 require "./people/person.rb"
 
-attr_reader :classroom
-attr_writer :classroom
+attr_accessor :classroom
 
 class Student < Person
   def initialize (name="Unknown", age, parent_permission="YES", classroom)

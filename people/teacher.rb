@@ -1,7 +1,6 @@
 require "./people/person.rb"
 
-attr_reader :specialization
-attr_writer :specialization
+attr_accessor :specialization
 
 class Teacher < Person
   def initialize (name="Unknown", age, parent_permission="YES", specialization)
