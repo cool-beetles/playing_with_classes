@@ -1,35 +1,35 @@
+require "./animals/remover.rb"
+
 class Animal
+  attr_reader :id, :owner, :visits
+  attr_accessor :name, :number_of_legs
+
   def initialize(number_of_legs, name = "Unknown")
     @id = Random.rand(1..1000)
     @name = name
     @number_of_legs = number_of_legs
+    @visits = []
   end
 
-  # only getter for id, we do not want it to be changeable
-  def id
-    @id
+  def owner=(value)
+    @owner = value
+    value.animals.push(self) unless value.animals.include?(self)
   end
 
-  def name
-    @name
-  end
-
-  def name=(value)
-    @name = value
-  end
-
-  def number_of_legs
-    @number_of_legs
-  end
-
-  def number_of_legs=(value)
-    @number_of_legs = value
+  def add_visit(visit)
+    @visits << visit
+    visit.animal = self
   end
 
   def speak
     if can_speak?
       "Bla bla bla"
     end
+  end
+
+  def remove_leg
+    remover = Remover.new
+    @number_of_legs = remover.decrease(@number_of_legs)
   end
 
   private

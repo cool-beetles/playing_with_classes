@@ -1,15 +1,9 @@
 class Dog < Animal
+  attr_accessor :color
+
   def initialize(number_of_legs, name = "Unknown", color = "black")
     super(number_of_legs, name)
     @color = color
-  end
-
-  def color
-    @color
-  end
-
-  def color=(value)
-    @color = value
   end
 
   def bring_a_stick
