@@ -1,39 +1,14 @@
 require "./people/corrector.rb"
 
+attr_reader :name :age :parent_permission :id
+attr_writer :name :age :parent_permission
+
 class Person
   def initialize(name = "Unknown", age, parent_permission = true)
     @id = Random.rand
     @name = name
     @age = age
     @parent_permission = parent_permission
-  end
-
-  def name
-    @name    
-  end
-
-  def name=(value)
-    @name = value    
-  end
-
-  def age
-    @age
-  end
-
-  def age=(value)
-    @age = value
-  end
-
-  def parent_permission
-    @parent_permission
-  end
-
-  def parent_permission=(value)
-    @parent_permission = value
-  end
-  
-  def id
-    @id
   end
 
   def can_use_services?

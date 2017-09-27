@@ -1,15 +1,12 @@
+require "./people/person.rb"
+
+attr_reader :classroom
+attr_writer :classroom
+
 class Student < Person
   def initialize (name="Unknown", age, parent_permission="YES", classroom)
     super(name, age, parent_permission)
     @classroom = classroom
-  end
-
-  def classroom
-    @classroom
-  end
-
-  def classroom=(value)
-    @classroom = value
   end
 
   def play_hooky
