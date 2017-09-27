@@ -1,5 +1,7 @@
+require "./people/corrector.rb"
+
 class Person
-  def initialize(name="Unknown", age, parent_permission)
+  def initialize(name = "Unknown", age, parent_permission = true)
     @id = Random.rand
     @name = name
     @age = age
@@ -35,7 +37,12 @@ class Person
   end
 
   def can_use_services?
-    is_of_age? || @parent_permission   
+    is_of_age? || @parent_permission 
+  end
+
+  def validate_name
+    corrector = Corrector.new
+    @name = corrector.correct_name(@name)
   end
 
   private
