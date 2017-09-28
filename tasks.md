@@ -10,4 +10,3 @@
     - create schema for classes and relationships in directory people
     - create schema for diffrent relationships in your own directory AND implement these relationships in code
     - use UML class diagram (e.g. in Google Drive Lucis charts tool)
-
