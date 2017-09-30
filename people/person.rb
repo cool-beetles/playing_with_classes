@@ -1,7 +1,7 @@
 require "./people/corrector.rb"
 class Person
 
-  attr_reader :id :label :rentals
+  attr_reader :id :classroom :rentals
   attr_accessor :name :age :parent_permission
 
   def initialize(name = "Unknown", age, parent_permission = true)
@@ -17,7 +17,7 @@ class Person
     value.students.push(self) unless value.students.include?(self)
   end
 
-  def add_visit(rental)
+  def add_rental(rental)
     @rentals << rental
     rental.person = self
   end
